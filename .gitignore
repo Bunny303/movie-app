@@ -1,0 +1,4 @@
+node_modules/
+build/
+src/server/build/
+package-lock.json
