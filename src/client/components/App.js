@@ -15,8 +15,8 @@ class HelloWorldComponent extends Component {
 }
 
 class HelloWorldPureComponent extends PureComponent {
-    shouldComponentUpdate(nextProps, nextState) { 
-        return nextProps === nextProps; 
+    shouldComponentUpdate(nextProps, nextState) {
+        return true;
     }
 
     render() {

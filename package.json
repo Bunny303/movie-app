@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:clientDev": "webpack --mode development",
-    "build:serverDev": "babel src/server -d src/server/build",
-    "start": "node src/server/build/index.js",
+    "build": "webpack --mode development", 
+    "start": "node src/server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -1,13 +1,6 @@
-import express from 'express';
-// import { renderToString } from 'react-dom/server';
-// import App from '../../client/App';
+var express = require('express');
 
 const app = express();
 
-app.use(express.static(__dirname +'./../../')); //serves the index.html
-app.get('/', (req, res) => {
-    // const markup = renderToString(<App />);
-    res.send('Hello World');
-});
-
+app.use(express.static(__dirname + './../../')); //serves the index.html
 app.listen(3000);
