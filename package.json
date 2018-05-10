@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack",
-    "build:prod": "webpack --config webpack.prod.config.js --progress --profile",
+    "build:dev": "webpack --env.dev",
+    "build:prod": "webpack --env.prod -p",
     "start": "webpack-dev-server",
     "test": "jest"
   },
