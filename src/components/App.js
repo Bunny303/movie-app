@@ -1,43 +1,33 @@
 import React, { Component, PureComponent } from 'react';
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import styled from 'styled-components';
 
-class HelloWorldElement extends Component {
-    render() {
-        return React.createElement('div', null, 'Hello World');
-    }
-}
-
-class HelloWorldComponent extends Component {
-    render() {
-        return (
-            <div>Hello World</div>
-        );
-    }
-}
-
-class HelloWorldPureComponent extends PureComponent {
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    render() {
-        return (
-            <div>Hello World</div>
-        );
-    }
-}
-
-const HelloWorldFunctionalComponent = () => (
-    <div>Hello World</div>
-);
+import SearchPage from './SearchPage';
+import FilmDetailsPage from './FilmDetailsPage';
 
 const App = () => (
-    <div>
-        <p>Hello World</p>
-        <HelloWorldElement />
-        <HelloWorldComponent />
-        <HelloWorldPureComponent />
-        <HelloWorldFunctionalComponent />
-    </div>
+    <BrowserRouter>
+        <StyledLayout>
+            <Switch>
+                {/* 
+                    TODO:
+                    - error boundaries
+                    - add some styles
+
+                    - validate all component with https://reactjs.org/docs/typechecking-with-proptypes.html
+                        for exmaple look at FilmListItem component
+                */}
+                <Route exact path="(/|/search)" component={SearchPage} />
+                <Route path="/film/:id" component={FilmDetailsPage} />
+            </Switch>
+        </StyledLayout>
+    </BrowserRouter>
 );
+
+const StyledLayout = styled.div`
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+`;
 
 export default App;
