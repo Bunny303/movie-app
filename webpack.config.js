@@ -8,10 +8,9 @@ const APP_DIR = path.resolve(__dirname, "./src");
 
 module.exports = env => {
   const isProd = env.prod;
-
+  
   return {
     mode: isProd ? "production" : "development",
-    cache: isProd,
     entry: APP_DIR + "/index.js",
     devtool: isProd ? "cheap-module-eval-source-map" : "source-map",
     output: {
@@ -61,12 +60,12 @@ module.exports = env => {
         }
       ]
     },
-    plugins: [
-      new webpack.DefinePlugin({
-        "process.env": {
-          NODE_ENV: isProd ? "production" : "development"
-        }
-      })
-    ]
+    // plugins: [
+    //   new webpack.DefinePlugin({
+    //     "process.env": {
+    //       NODE_ENV: isProd ? "production" : "development"
+    //     }
+    //   })
+    // ]
   }
 }
